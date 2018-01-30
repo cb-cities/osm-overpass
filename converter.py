@@ -41,7 +41,7 @@ def link_write(way_elements, links_sc, node_dictionary, links1_f):
 	print('end of links')
 
 # read the overpass data and separate into nodes and links
-overpass_f = 'target_subbay.osm'
+overpass_f = 'target.osm'
 data = json.load(open(overpass_f))
 elements = data['elements']
 node_elements = []
@@ -89,6 +89,6 @@ print len(node_elements), len(way_elements), len(way_elements_break)
 # TODO: combine nodes, break links
 nodes_sc = []
 links_sc = []
-node_write(node_elements, nodes_sc, 'subbaynodes1_drivable_graph.json')
+node_write(node_elements, nodes_sc, 'nodes1_drivable_graph.json')
 node_dictionary = {n['id']:[n['lon'], n['lat']] for n in node_elements}
-link_write(way_elements_break, links_sc, node_dictionary, 'subbaylinks1_drivable_graph.json')
+link_write(way_elements_break, links_sc, node_dictionary, 'links1_drivable_graph.json')
