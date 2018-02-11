@@ -63,13 +63,13 @@ Based on the hard way documented in [sierra-charlie/README.md](https://github.co
 
 Portions of the code are written in [PureScript](http://www.purescript.org/) and [Elm](http://elm-lang.org/).  Compilers for both languages and the [Node.js](https://nodejs.org/) runtime must be installed on the local machine.
 
-The project is developed on OS X, but may support other UNIX platforms.  On OS X, system-level dependencies should be installed with the [`brew`](http://brew.sh/) tool. 
+The project is developed on OS X, but may support other UNIX platforms.  On OS X, system-level dependencies should be installed with the [`brew`](http://brew.sh/) tool.  
 
-Open the terminal and change directory inside `../sierra-charlie`. Run the following command:  
+Install Homebrew (taken from the website: https://brew.sh)
 
-Install brew tool writing (taken from the website: https://brew.sh)
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+Open the terminal and change directory inside `../sierra-charlie`. Run the following command to install `node.js` and `purescript`: 
 
 `brew install node purescript`  
 
