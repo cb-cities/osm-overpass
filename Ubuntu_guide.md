@@ -67,12 +67,12 @@ Now inside this window paste:
   }
 }
 ```  
-To save and close, type:  
-`crtl + o`  
-Enter  
-`Crtl + x`  
-`sudo ln -s /etc/nginx/sites-available/tutorial /etc/nginx/sites-enabled/tutorial`  
-`sudo service nginx restart`  
+    To save and close, type:  
+    `crtl + o`  
+    Enter  
+    `Crtl + x`  
+    `sudo ln -s /etc/nginx/sites-available/tutorial /etc/nginx/sites-enabled/tutorial`  
+    `sudo service nginx restart`  
 - 3g. Now, you are ready to build the project, so run the following commands (inside sierra-charlie):  
 `npm run build`  
 `npm start`  
