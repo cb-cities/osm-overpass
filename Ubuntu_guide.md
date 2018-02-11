@@ -65,7 +65,9 @@ Now inside this window paste:
     proxy_set_header  Host       $http_host;
     proxy_pass        http://127.0.0.1:3000;
   }
-}```
+}
+```  
+
 To save and close, type:  
 `crtl + o`  
 Enter  
