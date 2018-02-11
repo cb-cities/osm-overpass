@@ -67,7 +67,6 @@ Now inside this window paste:
   }
 }
 ```  
-
 To save and close, type:  
 `crtl + o`  
 Enter  
