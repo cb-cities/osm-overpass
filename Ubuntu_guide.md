@@ -36,13 +36,14 @@ Now you have these two new files: `nodes1_drivable_graph.json` and `links1_driva
 		(Installing Elm)  
 `yarn add elm@0.16.0`  
 `yarn install`  
-- 3c. Now you have to install gzip to compress `nodes1_drivable_graph.json` and `links1_drivable_graph.json`
+- 3c. Now you need to prepare the data for sierra-charlie to visualize. THe data have been downloaded to `osm-overpass` and converted to `nodes1_drivable_graph.json` and `links1_drivable_graph.json`. In order for sierra-charlie to visualize them, the data files still need to be compressed, renamed and moved to the correct location.
+Install gzip:  
 `sudo apt-get update`  
 `sudo apt-get install gzip`  
-Go to `osm-overpass`  
+Go to `osm-overpass` to compress the data files:  
 `gzip nodes1_drivable_graph.json`  
 `gzip links1_drivable_graph.json`  
-You need to rename these two files before moving them from `osm-overpass` to the `sierra-charlie`:  
+You need to rename the resulting files before moving them from `osm-overpass` to the `sierra-charlie` folder:  
 `mv nodes1_drivable_graph.json.gz nodes1.json.gz`  
 `mv links1_drivable_graph.json.gz links1.json.gz`  
 `mv nodes1.json.gz ~/sierra-charlie/json`  
@@ -57,22 +58,24 @@ Open Google Chrome and type the Public DNS (IPv4) to check installation
 `sudo rm /etc/nginx/sites-enabled/default`  
 `sudo nano /etc/nginx/sites-available/tutorial`  
 Now inside this window paste:  
-```server {
-  listen 80;
-  server_name tutorial;
-  location / {
-    proxy_set_header  X-Real-IP  $remote_addr;
-    proxy_set_header  Host       $http_host;
-    proxy_pass        http://127.0.0.1:3000;
-  }
-}
-```  
-  To save and close, type:  
-    `crtl + o`  
-    Enter  
-    `Crtl + x`  
-    `sudo ln -s /etc/nginx/sites-available/tutorial /etc/nginx/sites-enabled/tutorial`  
-    `sudo service nginx restart`  
+
+        ```server {
+          listen 80;
+          server_name tutorial;
+          location / {
+            proxy_set_header  X-Real-IP  $remote_addr;
+           proxy_set_header  Host       $http_host;
+            proxy_pass        http://127.0.0.1:3000;
+          }
+        }
+        ```  
+
+To save and close, type:  
+`crtl + o`  
+Enter  
+`Crtl + x`  
+`sudo ln -s /etc/nginx/sites-available/tutorial /etc/nginx/sites-enabled/tutorial`  
+`sudo service nginx restart`  
 - 3g. Now, you are ready to build the project, so run the following commands (inside sierra-charlie):  
 `npm run build`  
 `npm start`  
